@@ -106,34 +106,34 @@ if ($.isNode()) {
     await helpMain();
   }
   await getAuthorShareCode()
-  if ($.authorCode && $.authorCode.length) {
-    console.log(`\n开始帮【zero205】助力，感谢！\n`);
-    for (let i = 0; i < cookiesArr.length && i < $.authorCode.length; i++) {
-      cookie = cookiesArr[i];
-      $.UserName = decodeURIComponent($.cookie.match(/pt_pin=(.+?);/) && $.cookie.match(/pt_pin=(.+?);/)[1])
-      $.index = i + 1;
-      $.isLogin = true;
-      $.canHelp = true;
-      $.oneTuanInfo = $.authorCode[i];
-      if ($.oneTuanInfo['completed']) {
-        continue;
-      }
-      console.log(`${$.UserName}去助力${$.oneTuanInfo['user']}`);
-      $.detail = {};
-      $.rewardRecordId = '';
-      await getActivityDetail();
-      if (JSON.stringify($.detail) === '{}') {
-        console.log(`获取活动详情失败`);
-        return;
-      } else {
-        $.rewardRecordId = $.detail.rewardRecordId;
-        console.log(`获取活动详情成功`);
-      }
-      await $.wait(3000);
-      await help();
-      await $.wait(2000);
-    }
-  }
+ // if ($.authorCode && $.authorCode.length) {
+ //   console.log(`\n开始帮【zero205】助力，感谢！\n`);
+ //   for (let i = 0; i < cookiesArr.length && i < $.authorCode.length; i++) {
+ //     cookie = cookiesArr[i];
+ //     $.UserName = decodeURIComponent($.cookie.match(/pt_pin=(.+?);/) && $.cookie.match(/pt_pin=(.+?);/)[1])
+ //     $.index = i + 1;
+ //     $.isLogin = true;
+ //     $.canHelp = true;
+ //     $.oneTuanInfo = $.authorCode[i];
+ //     if ($.oneTuanInfo['completed']) {
+ //       continue;
+ //     }
+ //     console.log(`${$.UserName}去助力${$.oneTuanInfo['user']}`);
+ //     $.detail = {};
+ //     $.rewardRecordId = '';
+ //     await getActivityDetail();
+ //     if (JSON.stringify($.detail) === '{}') {
+ //       console.log(`获取活动详情失败`);
+ //       return;
+ //     } else {
+ //       $.rewardRecordId = $.detail.rewardRecordId;
+ //       console.log(`获取活动详情成功`);
+ //     }
+ //     await $.wait(3000);
+ //     await help();
+ //     await $.wait(2000);
+ //   }
+ // }
   console.log(`\n开始领取奖励\n`);
   for (let i = 0; i < cookiesArr.length && i < openCount; i++) {
     $.cookie = cookiesArr[i];
@@ -176,7 +176,7 @@ if ($.isNode()) {
 async function getAuthorShareCode() {
     return new Promise(resolve => {
         $.get({
-            url: "https://raw.fastgit.org/zero205/updateTeam/main/shareCodes/sd.json",
+            url: "",
             headers: {
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
             }
