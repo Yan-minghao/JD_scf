@@ -105,7 +105,7 @@ if ($.isNode()) {
     }
     await helpMain();
   }
-  await getAuthorShareCode()
+ // await getAuthorShareCode()
  // if ($.authorCode && $.authorCode.length) {
  //   console.log(`\n开始帮【zero205】助力，感谢！\n`);
  //   for (let i = 0; i < cookiesArr.length && i < $.authorCode.length; i++) {
