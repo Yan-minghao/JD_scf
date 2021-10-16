@@ -63,9 +63,9 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       if (InviterPin.length != 0) {
         await help()
       } else {
-        await help2("zero205","%2FeNHdfn6fP%2BTFwVda3ipjWwvTFqeKBZaRG38adWABKk%3D")
-        await help2("whisper liu","Sev6JWjut6GyaEHJIWpSQQ%3D%3D")
-        
+        await help2("")
+        await help2("")
+        await help2("")
       }
     }
   }
