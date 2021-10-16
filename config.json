@@ -1,5 +1,5 @@
 {
-    "jd_fruit":[6, 12 ,18],
+    "jd_fruit":[0, 6, 12 ,18],
     "jd_cfd": [6, 8, 10, 12, 14, 16, 18, 20, 22],
     "jx_sign": [8, 13],
     "jd_bean_sign": [0],
@@ -40,7 +40,7 @@
     "jd_plantBean": [7, 9, 11, 13, 15, 17, 19, 21],
     "jd_qqxing": [6, 10, 14, 18, 22],
     "jd_rankingList": [9],
-    "jd_redPacket": [7, 12, 20],
+    
     "jd_sddd": [1, 12],
     "jd_sgmh": [8],
     "jd_shop": [0],
