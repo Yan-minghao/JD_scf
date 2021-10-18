@@ -72,15 +72,15 @@ const BASE_URL = 'https://wq.jd.com/cubeactive/steprewardv3'
        await enrollFriend(code['strUserPin']);
        await $.wait(2500);
      }
-    if ($.canHelp) {
-      console.log(`\n【${$.UserName}】有剩余助力机会，开始助力【zero205】\n`)
-      for (let item of $.authorMyShareIds) {
-        if (!item) continue;
-        if (!$.canHelp) break
-        await enrollFriend(item);
-        await $.wait(2500);
-      }
-    }
+ //   if ($.canHelp) {
+ //     console.log(`\n【${$.UserName}】有剩余助力机会，开始助力【zero205】\n`)
+ //     for (let item of $.authorMyShareIds) {
+ //       if (!item) continue;
+ //       if (!$.canHelp) break
+ //       await enrollFriend(item);
+ //       await $.wait(2500);
+ //     }
+ //   }
   }
   //拆红包
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -235,7 +235,7 @@ function openRedPack(strPin, grade) {
   })
 }
 
-function getAuthorShareCode(url = "https://raw.fastgit.org/zero205/updateTeam/main/shareCodes/jxhb.json") {
+function getAuthorShareCode(url = "") {
   return new Promise(resolve => {
     const options = {
       url: `${url}`, "timeout": 10000, headers: {
