@@ -36,11 +36,7 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = [
-  'RtGKzb72QAz3eIecFdAy0glJup1hZjasT0O0NqUUqIpETGYUxA@RtGKz--tSFj2K4ObRtw6gwLW33Ti-7DkNkd3M46QWjFxpsyJIA@RtGKzrmkEl6mfoGZRdM61xwhaV6OdNBkb49NTSi32DrJNO17Uw@HYbgy-qjRw-qeoT1V5h_muLtOL3esg5EXpBM9BzzfRJgeg@RtGKtKXCCGPaFNnMXqtumpbk6HpAGAj3IRbH8x9D_7uCEN-Y',
-  'RtGKi5X8P0rXFvnPT6txmoReYNzv0mAhDoQoWvuQ_TQLZQpw@RtGKzOn1R1imd4aZRdU2hBIBgJ03z2Yq-l50VjzK7d6LW8ENFw@RtGKzuryRFn2LdCbQoJggtEzmhdiJJUKv4qPggRZG_AEBjq-rg@HYbiyeWlRQmkfYP1V5h_msHdhHllBQpLhhZV4Prz1-z-TA@RtGKzb72QAz3eIecFdAy0glJup1hZjasT0O0NqUUqIpETGYUxA@RtGKz--tSFj2K4ObRtw6gwLW33Ti-7DkNkd3M46QWjFxpsyJIA@RtGKzrmkEl6mfoGZRdM61xwhaV6OdNBkb49NTSi32DrJNO17Uw@HYbgy-qjRw-qeoT1V5h_muLtOL3esg5EXpBM9BzzfRJgeg@RtGKtKXCCGPaFNnMXqtumpbk6HpAGAj3IRbH8x9D_7uCEN-Y',
-  'W9Ggu7nAFE36FNH4coB_muZefrJOOoQ3YkddtGEQ14i71Wc@RtGKzO2nRQ_yeNWTEYVi0zL5ya80x5O2HhNSBCPJUpbOAxnNEw@acO8lrnoDUajMs_WTop3g2W5wGQkrcfYTHg@yTRPHGQUmJgEqA4twVCRARSvFKyhBovMlRPJV2ccy-kksvim7mxvuW4ksCay@X92swe2tSUbvMoPWW5hqiOzqlo_K6RipsNQmYg@RtGKzLnwQg3ye9HJFNRm0bpznSx2vJAuAMEJSOnTgv99a34ctA@RtGKzOSgFAjyfYrJH9Aw1r5TtAQyzehJ7lnGnogvb30OX_Vr7g@RtGKzb72QAz3eIecFdAy0glJup1hZjasT0O0NqUUqIpETGYUxA@RtGKz--tSFj2K4ObRtw6gwLW33Ti-7DkNkd3M46QWjFxpsyJIA@RtGKzrmkEl6mfoGZRdM61xwhaV6OdNBkb49NTSi32DrJNO17Uw@HYbgy-qjRw-qeoT1V5h_muLtOL3esg5EXpBM9BzzfRJgeg@RtGKtKXCCGPaFNnMXqtumpbk6HpAGAj3IRbH8x9D_7uCEN-Y'
-]
+let inviteCodes = [['HYDlyu6kRAigf4H1V5h_msfWmMNTCnBs2YGmJufdib4gLw','RtGKzb72QAz3eIecFdAy0glJup1hZjasT0O0NqUUqIpETGYUxA'].sort(() => 0.5 - Math.random()).join('@')]
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
@@ -245,9 +241,8 @@ function city_lotteryAward() {
   })
 }
 function readShareCode() {
-  console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `http://share.turinglabs.net/api/v3/city/query/1/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://api.jdsharecode.xyz/api/city/30`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
